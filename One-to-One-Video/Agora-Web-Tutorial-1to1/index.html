@@ -36,11 +36,12 @@
               </div>
               <div class="row" style="margin: 0">
                 <div class="col s12">
-                <button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button>
-                <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button>
-                <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button>
-                <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button>
-                <button class="btn btn-raised btn-primary waves-effect waves-light" id="hide-video" style="margin-top: 1rem; background: red">HIDE VIDEO</button>
+                  <button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button>
+                  <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button>
+                  <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button>
+                  <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button>
+                  <button class="btn btn-raised btn-primary waves-effect waves-light" id="hide-video" style="margin-top: 1rem; background: red">HIDE VIDEO</button>
+                  <button class="btn btn-raised btn-primary waves-effect waves-light" id="show-video" style="margin-top: 1rem; background: blue">SHOW VIDEO</button>
                 </div>
               </div>
           </div>
@@ -590,6 +591,28 @@
           leave(rtc)
         }
       })
+      // This hides the video feed
+      $("#hide-video").on("click", function (e) {
+        console.log("hide video")
+        e.preventDefault()
+
+        if (!rtc.localStream) {
+          return;
+        }
+
+        rtc.localStream.muteVideo();
+      });
+      // This unhides the video feed
+      $("#show-video").on("click", function (e) {
+        console.log("show video")
+        e.preventDefault()
+
+        if (!rtc.localStream) {
+          return;
+        }
+
+        rtc.localStream.unmuteVideo();
+      });
     })
   </script>
 </html>
