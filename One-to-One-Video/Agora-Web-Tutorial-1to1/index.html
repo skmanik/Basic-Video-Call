@@ -317,7 +317,12 @@
         var id = remoteStream.getId()
         rtc.remoteStreams.push(remoteStream)
         addView(id)
-        remoteStream.play("remote_video_" + id)
+        remoteStream.play("remote_video_" + id, error => {
+          if (error) {
+            console.log("remote stream playback error", error);
+          }
+        });
+
         Toast.info("stream-subscribed remote-uid: " + id)
         console.log("stream-subscribed remote-uid: ", id)
       })
@@ -425,7 +430,11 @@
           rtc.localStream.init(function () {
             console.log("init local stream success")
             // play stream with html element id "local_stream"
-            rtc.localStream.play("local_stream")
+            rtc.localStream.play("local_stream", error => {
+              if (error) {
+                console.log("local stream playback error", error);
+              }
+            });
 
             // publish local stream
             publish(rtc)
