@@ -1,60 +1,51 @@
-# 视频通话
+# Web Tutorial For Webpack - 1to1
 
-_其他语言：[English](README.md)_
+*[English](README.md) | 中文*
 
-Agora 提供一系列的示例应用，展示如何集成 Agora 视频 SDK。
+这个开源示例项目演示了如何快速集成 Agora 视频 SDK，实现多人视频通话。
 
-- [一对一视频通话](#1-to-1-video-calls)
-- [多人视频通话](#group-video-calls)
+在这个示例项目中包含了以下功能：
 
-## 支持的平台
+- 加入通话和离开通话:
+- 选择摄像头和麦克风设备:
 
-### 一对一视频通话
+## 环境准备
 
-一对一视频通话的示例应用包含 Android, iOS, MacOS, 以及 Windows 平台。
+- nodejs LTS
+- 浏览器
 
-一对一视频通话的示例应用，展示了：
+## 运行示例程序
 
-- 加入 / 离开频道
-- 静音 / 取消静音
-- 开启 / 关闭视频
-- 切换摄像头视角
+This section shows you how to prepare, and run the sample application.
 
+### 创建Agora账号并获取AppId
 
-项目文件夹名称|平台|描述
----|---|---
-[Agora-Android-Tutorial-1to1](./One-to-One-Video/Agora-Android-Tutorial-1to1)|Android (Java)|Android 一对一视频通话指南
-[Agora-Android-Tutorial-Kotlin-1to1](./One-to-One-Video/Agora-Android-Tutorial-Kotlin-1to1)|Android ([Kotlin](https://developer.android.com/kotlin/))|Android 一对一视频通话指南（[Kotlin](https://developer.android.com/kotlin/)）
-[Agora-iOS-Tutorial-Objective-C-1to1](./One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1)|iOS (Objective-C)|iOS 一对一视频通话指南 （Objective-C）
-[Agora-iOS-Tutorial-Swift-1to1](./One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1)|iOS (Swift)|iOS 一对一视频通话指南（Swift）
-[Agora-macOS-Tutorial-Objective-C-1to1](./One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1)|MacOS (Objective-C) <img width=30/>|MacOS 一对一视频通话指南（Objective-C）
-[Agora-macOS-Tutorial-Swift-1to1](./One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1)|MacOS (Swift)|MacOS 一对一视频通话指南（Swift）
-[Agora-Windows-Tutorial-1to1](./One-to-One-Video/Agora-Windows-Tutorial-1to1)|Windows|Windows 一对一视频通话指南
-[Agora-Web-Tutorial-1to1](./One-to-One-Video/Agora-Web-Tutorial-1to1)|Web|Web 一对一视频通话指南
-
-### 多人视频通话
-
-多人视频通话的示例应用包含 Web, Android, iOS, MacOS, Windows 以及 Linux 平台。
+在编译和启动实例程序前，您需要首先获取一个可用的App ID:
+1. 在[agora.io](https://dashboard.agora.io/signin/)创建一个开发者账号
+2. 前往后台页面，点击左部导航栏的 **项目 > 项目列表** 菜单
+3. 复制后台的 **App ID** 并备注，稍后启动应用时会用到它
+4. 在项目页面生成临时 **Access Token** (24小时内有效)并备注，注意生成的Token只能适用于对应的频道名。
 
 
-多人视频通话的示例应用，展示了：
+### 集成 Agora 视频 SDK
 
-- 加入 / 离开频道
-- 静音 / 取消静音
-- 开启 / 关闭视频
-- 切换摄像头视角
-- 向频道发送信息
-- 设置分辨率，帧率，码率
-
-项目文件夹名称|平台|描述
----|---|---
-[OpenVideoCall-Web](./Group-Video/OpenVideoCall-Web)|Web|Web 多人视频通话指南
-[OpenVideoCall-Android](./Group-Video/OpenVideoCall-Android)|Android|Android 多人视频通话指南
-[OpenVideoCall-iOS](./Group-Video/OpenVideoCall-iOS)|iOS (Swift)|iOS 多人视频通话指南（Swift）
-[OpenVideoCall-iOS-Objective-C](./Group-Video/OpenVideoCall-iOS-Objective-C)|iOS (Objective-C)|iOS 多人视频通话指南（Objective-C）
-[OpenVideoCall-macOS](./Group-Video/OpenVideoCall-macOS)|MacOS (Swift)|MacOS 多人视频通话指南（Swift）
-[OpenVideoCall-Windows](./Group-Video/OpenVideoCall-Windows)|Windows|Windows 多人视频通话指南
-[OpenVideoCall-Linux](./Group-Video/OpenVideoCall-Linux)|Linux|Linux 多人视频通话指南
+1. 在Terminal中，在您的项目根目录输入`install`命令以安装项目依赖
+    ```shell
+    # install dependencies
+    npm install
+    ```
+2. 输入`run dev`命令以启动Web程序
+    ```shell
+    # serve with hot reload at localhost:8080
+    npm run dev
+    ```
+    输入`npm run build`会压缩静态资源文件，可作为生产环境打包发布。
+    ``` bash
+    # build for production with minification
+    npm run build
+    ```
+3. 你的浏览器默认会打开示例应用程序。
+    **注意** 如果没有自动打开，请在浏览器里手动输入URL `http://localhost:8080`。
 
 ## 联系我们
 
@@ -67,7 +58,6 @@ Agora 提供一系列的示例应用，展示如何集成 Agora 视频 SDK。
 - 如果需要售后技术支持, 你可以在 [Agora Dashboard](https://dashboard.agora.io) 提交工单
 - 如果发现了示例代码的 bug，欢迎提交 [issue](https://github.com/AgoraIO/Basic-Video-Call/issues)
 
-
 ## 代码许可
 
-MIT许可证 [查看许可](LICENSE.md)。
+The MIT License (MIT)
