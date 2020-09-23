@@ -55,7 +55,12 @@ export default class RTCClient {
       const id = remoteStream.getId()
       this._remoteStreams.push(remoteStream)
       addView(id, this._showProfile)
-      remoteStream.play('remote_video_' + id, {fit: 'cover'})
+      remoteStream.play('remote_video_' + id, {fit: 'cover'}, error => {
+        if (error) {
+          console.log('Stream.play() Error with playback, id:', id);
+        }
+      })
+
       Toast.info('stream-subscribed remote-uid: ' + id)
       console.log('stream-subscribed remote-uid: ', id)
     })
@@ -167,7 +172,11 @@ export default class RTCClient {
           this._localStream.init(() => {
             console.log('init local stream success')
             // play stream with html element id "local_stream"
-            this._localStream.play('local_stream', {fit: 'cover'})
+            this._localStream.play('local_stream', {fit: 'cover'}, error => {
+              if (error) {
+                console.log('Stream.play() Error with playback, localStream');
+              }
+            })
     
             // run callback
             resolve()
