@@ -57,7 +57,7 @@ export default class RTCClient {
       addView(id, this._showProfile)
       remoteStream.play('remote_video_' + id, {fit: 'cover'}, error => {
         if (error) {
-          console.log('Stream.play() Error with playback, id:', id);
+          console.log('Stream.play() Error with playback, id:', id)
         }
       })
 
@@ -174,7 +174,7 @@ export default class RTCClient {
             // play stream with html element id "local_stream"
             this._localStream.play('local_stream', {fit: 'cover'}, error => {
               if (error) {
-                console.log('Stream.play() Error with playback, localStream');
+                console.log('Stream.play() Error with playback, localStream')
               }
             })
     
