@@ -105,4 +105,10 @@ $(() => {
     console.log('hide-video')
     rtc.hideVideo()
   })
+
+  $('#show-video').on('click', function (e) {
+    e.preventDefault()
+    console.log('show-video')
+    rtc.showVideo()
+  })
 })
