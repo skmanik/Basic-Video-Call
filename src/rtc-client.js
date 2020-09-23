@@ -228,6 +228,16 @@ export default class RTCClient {
     this._published = false
   }
 
+  hideVideo () {
+    if (!this._client) {
+      Toast.error('Please Join First!')
+      return
+    }
+
+    console.log('hiding video', this._localStream)
+    this._localStream.muteVideo()
+  }
+
   leave () {
     if (!this._client) {
       Toast.error('Please Join First!')

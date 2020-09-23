@@ -99,4 +99,10 @@ $(() => {
       rtc.leave()
     }
   })
+
+  $('#hide-video').on('click', function (e) {
+    e.preventDefault()
+    console.log('hide-video')
+    rtc.hideVideo()
+  })
 })
